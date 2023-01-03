@@ -1,27 +1,14 @@
-const tasks = [
-    {
-        id:1,
-        name:"Cleaning",
-        date:"Monday 9pm"
-    },
-    {
-        id:2,
-        name:"Ironing",
-        date:"Sunday 9pm"
+import Task from "./Task"
+function Tasks({odCounter, counter, tasks}) {
 
-    },
-    {
-        id:3,
-        name:"Shopping",
-        date:"Saturday 9pm"
-    }
-]
 function getName(i){
     return <li> {i.name} </li>
 }
-function Tasks() {
+
   return (
-    <>{tasks.map(getName)}</>
+    <>
+    {tasks.map((i) => <Task key={i.id} content={i.name} date={i.date} odCounter={odCounter} counter={counter}/>)}
+    {/*tasks.map(getName)*/}</>
   )
 }
 

@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types'
 
-function myalert(){
-    alert('are you into young little boys?')
-    console.log('no')
+function myAlert(onc){
+    onc === "True" ? alert('The alert is working-horray') : 
+    console.log(onc)
 }
 
-function Button({name, color}) {
+function Button({name, color, onc}) {
     return (
-          <button onClick={myalert} style={{backgroundColor:color }} className="btn">{name}</button>
+          <button onClick={()=>myAlert(onc)} style={{backgroundColor:color }} className="btn">{name}</button>
     )
   }
   export default Button
 
   Button.defaultProps = {
-    backgroundColor:'yellow',
-    color:'black',
-    name:'click'
+    color:'yellow',
+    name:'default',
+    onc:'False'
  }
   
  Button.propTypes = {
